@@ -1,0 +1,57 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+	</head>
+	<body>
+		<h1>My Food Tracker - Add Food</h1>
+		<a href="{% url 'food:index' %}" class="btn btn-info">Back</a><br />
+		<form role="form" action="" method="POST">
+		    {% csrf_token %}
+			<table class="table table-dark table-bordered table-striped">
+				<tbody>
+					<tr>
+						<th>Food</th>
+						<th>{{ food_form.name }}</th>
+					</tr>
+					<tr>
+						<th>Calories</th>
+						<th>{{ food_form.calories }} kcal</th>
+					</tr>
+					<tr>
+						<th>Total Fat</th>
+						<th>{{ food_form.total_fat }} g</th>
+					</tr>
+					<tr>
+						<th>Saturated Fat</th>
+						<th>{{ food_form.saturated_fat }} g</th>
+					</tr>
+					<tr>
+						<th>Cholesterol</th>
+						<th>{{ food_form.cholesterol }} mg</th>
+					</tr>
+					<tr>
+						<th>Sodium</th>
+						<th>{{ food_form.sodium }} mg</th>
+					</tr>
+					<tr>
+						<th>Total Carbohydrate</th>
+						<th>{{ food_form.total_carbohydrate }} g</th>
+					</tr>
+					<tr>
+						<th>Dietary Fibre</th>
+						<th>{{ food_form.dietary_fibre }} g</th>
+					</tr>
+					<tr>
+						<th>Sugar</th>
+						<th>{{ food_form.sugar }} g</th>
+					</tr>
+					<tr>
+						<th>Protein</th>
+						<th>{{ food_form.protein }} g</th>
+					</tr>
+				</tbody>
+			</table>
+			<button type="submit" class="btn btn-success">Save</button>
+		</form>
+	</body>
+</html>
